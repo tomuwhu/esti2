@@ -3,10 +3,10 @@ const db = new Database('foobar.db', {})
 db.pragma('journal_mode = WAL')
 
 export const load = () => {
-    db.serialize(() => {
-        
-    })
+    let x = db.prepare(`
+        SELECT * FROM x1
+      `).all()
     return {
-        title: 'Home'
+        title: x
     }
 }

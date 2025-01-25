@@ -1,5 +1,8 @@
 <script>
     let { data } = $props()
+    console.log(data)
 </script>
-Cica
-{data.title}
+Adatok az adatbázisból:<br>
+{#each data.title as row}
+    {row.nev}<br>
+{/each}
